@@ -2,31 +2,38 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <title>Onet – Jesteś na bieżąco</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="/src/scss/style.scss">
+    <script type="module" src="/src/main.js"></script>
 </head>
 <body>
     <header class="header">
         <div class="header__container">
             <div class="header__left">
                 <a href="/" class="header__logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Onet_logo_2017.svg" alt="Onet Logo">
+                    <img src="public/images/logo-onet.png" alt="Onet Logo" width="88" height="16" fetchpriority="high">
                 </a>
-                <nav class="header__nav">
-                    <a href="#" class="nav-link">WIADOMOŚCI</a>
-                    <a href="#" class="nav-link">SPORT</a>
-                    <a href="#" class="nav-link active">PREMIUM</a>
-                    <a href="#" class="nav-link">BIZNES</a>
-                    <a href="#" class="nav-link">REGIONALNE</a>
-                    <a href="#" class="nav-link">POGODA</a>
-                </nav>
+                <div class="header__search">
+                    <input type="text" placeholder="Szukaj">
+
+                    <button class="search-btn">SZUKAJ</button>
+                </div>
+                <div class="header__tools">
+                    <a href="#" class="tool-link"><span class="material-icons">favorite_border</span> SYMPATIA</a>
+                    <a href="#" class="tool-link"><span class="material-icons">shopping_cart</span> OLX</a>
+                    <a href="#" class="tool-link"><span class="material-icons">assessment</span> DIAGNOSTYKA</a>
+                    <a href="#" class="tool-link"><span class="material-icons">videocam</span> RABATY</a>
+                    <a href="#" class="tool-premium">PREMIUM</a>
+                </div>
             </div>
             <div class="header__actions">
                 <button class="header__icon">
-                    <span class="material-icons">search</span>
+                    <span class="material-icons">notifications_none</span>
                 </button>
                 <button class="header__icon">
                     <span class="material-icons">mail_outline</span>
@@ -36,19 +43,43 @@
                 </button>
             </div>
         </div>
+        <nav class="main-nav">
+            <div class="main-nav__container">
+                <a href="#" class="nav-link active">WIADOMOŚCI</a>
+                <a href="#" class="nav-link">SPORT</a>
+                <a href="#premium" class="nav-link">PREMIUM</a>
+                <a href="#" class="nav-link">BIZNES</a>
+                <a href="#" class="nav-link">REGIONALNE</a>
+                <a href="#" class="nav-link">POGODA</a>
+                <a href="#" class="nav-link">WIDEO I AUDIO</a>
+                <a href="#" class="nav-link">MOTORYZACJA</a>
+                <a href="#" class="nav-link">WIĘCEJ</a>
+            </div>
+        </nav>
     </header>
 
     <div class="weather-bar">
         <div class="weather-bar__container">
-            <div class="weather-bar__item">
-                <span>Warszawa</span>
-                <span class="material-icons">wb_sunny</span>
-                <span>24°</span>
-                <span>Dobry</span>
-                <span>32°</span>
+            <div class="weather-bar__items">
+                <div class="weather-item">
+                    <span class="city">Warszawa</span>
+                    <span class="material-icons">wb_sunny</span>
+                    <span class="temp">24°</span>
+                </div>
+                <div class="weather-item">
+                    <span class="quality good">
+                        <span class="material-icons">sentiment_satisfied_alt</span>
+                        <span>dobry</span>
+                    </span>
+                </div>
+                <div class="weather-item">
+                    <span class="material-icons">wb_sunny</span>
+                    <span class="temp">32°</span>
+                </div>
             </div>
-            <div class="weather-bar__item yellow-alert">
-                Istotne wydrzenia: Polska wciąż jest autobusem uratowana
+            <div class="weather-bar__alert">
+                <span class="alert-time">07:08</span>
+                <span class="alert-text">Pożar w halach produkcyjnych. Bliskie dwa działania między z ogniem</span>
             </div>
         </div>
     </div>
@@ -62,31 +93,130 @@
             
             <div class="section-to-sie-mowi__grid">
                 <div class="section-to-sie-mowi__main">
+                    <img src="public/images/news5.jpg" alt="Main news" loading="lazy" width="800" height="360">
                     <div class="premium-badge">PREMIUM</div>
-                    <img src="https://via.placeholder.com/800x400" alt="Plaża nad morzem">
                     <h3>Najlepsze miejsca na wakacje nad polskim morzem. Ranking kurortów</h3>
                 </div>
                 
                 <div class="section-to-sie-mowi__sidebar">
                     <div class="news-item">
-                        <img src="https://via.placeholder.com/100x65" alt="News 1">
+                        <img src="public/images/news2.jpg" alt="News" loading="lazy" width="100" height="65">
                         <h4>Tragiczne wieści o synu prof. Zembal: "Mój syn przegrał walkę"</h4>
                     </div>
                     <div class="news-item">
-                        <img src="https://via.placeholder.com/100x65" alt="News 2">
+                        <img src="public/images/news3.jpg" alt="News" loading="lazy" width="100" height="65">
                         <h4>Biuro "tąpie klientów" i odwołuje wycieczki</h4>
                     </div>
                     <div class="news-item">
-                        <img src="https://via.placeholder.com/100x65" alt="News 3">
+                        <img src="public/images/news4.jpg" alt="News" loading="lazy" width="100" height="65">
                         <h4>Kapitalne trafienie w historii Euro! Serbowie rozstrzygnęli</h4>
                     </div>
                     <div class="news-item">
-                        <img src="https://via.placeholder.com/100x65" alt="News 4">
+                        <img src="public/images/news1.jfif" alt="News" loading="lazy" width="100" height="65">
                         <h4>Emocje przed konferencją Donalda Tuska</h4>
                     </div>
                 </div>
             </div>
         </section>
+
+        <div class="news-sections">
+            <div class="news-sections__column">
+                <div class="section-header">
+                    <span class="material-icons">article</span>
+                    <h2>NAJNOWSZE</h2>
+                </div>
+                <div class="news-list">
+                    <article class="news-card">
+                        <img src="./public/images/news4.jpg" alt="News image" loading="lazy" width="100" height="65">
+                        <div class="news-card__content">
+                            <h3>Polacy budują nową potęgę. Inwestycja za 6 mld zł</h3>
+                            <p class="news-card__meta">
+                                <span class="time">12 min</span>
+                                <span class="source">Biznes</span>
+                            </p>
+                        </div>
+                    </article>
+                    <article class="news-card">
+                        <img src="./public/images/news2.jpg" alt="News image" loading="lazy" width="100" height="65">
+                        <div class="news-card__content">
+                            <h3>Tak wygląda praca w USA. "W Polsce byłoby to nie do pomyślenia"</h3>
+                            <p class="news-card__meta">
+                                <span class="time">25 min</span>
+                                <span class="source">Praca</span>
+                            </p>
+                        </div>
+                    </article>
+                    <article class="news-card">
+                        <div class="news-card__content">
+                            <h3>Dramat polskiej pary w Grecji. "Straciliśmy wszystko"</h3>
+                            <p class="news-card__meta">
+                                <span class="time">45 min</span>
+                                <span class="source">Podróże</span>
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <div class="news-sections__column">
+                <div class="section-header">
+                    <span class="material-icons">sports_soccer</span>
+                    <h2>SPORT</h2>
+                </div>
+                <div class="news-list">
+                    <article class="news-card">
+                        <img src="./public/images/news3.jpg" alt="Sport news" loading="lazy" width="100" height="65">
+                        <div class="news-card__content">
+                            <span class="live-badge">NA ŻYWO</span>
+                            <h3>Wielki mecz Polaków! Prowadzą z mistrzami świata</h3>
+                            <p class="news-card__meta">
+                                <span class="time">TERAZ</span>
+                                <span class="source">Siatkówka</span>
+                            </p>
+                        </div>
+                    </article>
+                    <article class="news-card">
+                        <img src="./public/images/news4.jpg" alt="Sport news" loading="lazy" width="100" height="65">
+                        <div class="news-card__content">
+                            <h3>Świątek znów to zrobiła. Rywalka nie miała szans</h3>
+                            <p class="news-card__meta">
+                                <span class="time">1 godz</span>
+                                <span class="source">Tenis</span>
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <div class="news-sections__column">
+                <div class="section-header">
+                    <span class="material-icons">movie</span>
+                    <h2>KULTURA</h2>
+                </div>
+                <div class="news-list">
+                    <article class="news-card premium">
+                        <img src="/public/images/news1.jfif" alt="Culture news">
+                        <div class="news-card__content">
+                            <div class="premium-badge">PREMIUM</div>
+                            <h3>Nowy serial Netflixa podbija świat. Polacy maczali w tym palce</h3>
+                            <p class="news-card__meta">
+                                <span class="time">2 godz</span>
+                                <span class="source">Film</span>
+                            </p>
+                        </div>
+                    </article>
+                    <article class="news-card">
+                        <div class="news-card__content">
+                            <h3>Gwiazda lat 90. przerywa milczenie. "Byłam na dnie"</h3>
+                            <p class="news-card__meta">
+                                <span class="time">3 godz</span>
+                                <span class="source">Życie gwiazd</span>
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
     </main>
 </body>
 </html>

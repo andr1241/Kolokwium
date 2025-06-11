@@ -5,8 +5,6 @@
   box-sizing: border-box;
 }
 
-@import 'article';
-
 // Оптимизации производительности
 * {
   -webkit-font-smoothing: antialiased;
@@ -998,41 +996,86 @@ body {
   }
 }
 
-// Плавные переходы
-@media (prefers-reduced-motion: no-preference) {
-  .header,
-  .nav-link,
-  .news-card,
-  .weather-bar {
-    transition: all 0.2s ease-out;
-  }
-
-  .news-card img {
-    transition: transform 0.2s ease-out;
-    will-change: transform;
-    
-    &:hover {
-      transform: scale(1.05);
-    }
-  }
-}
-
-// Оптимизация для устройств с высоким DPI
+// Оптимизации для устройств с высоким DPI
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  img {
+  .section-to-sie-mowi__main img,
+  .news-card img,
+  .news-item img {
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
   }
 }
 
-// Добавляем стили для улучшения отзывчивости
-.main-nav, .weather-bar, .section-to-sie-mowi, .news-sections {
+// Улучшение отзывчивости
+.main-nav,
+.weather-bar,
+.section-to-sie-mowi,
+.news-sections {
   -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
 }
 
-// Улучшаем поведение изображений
+// Оптимизация изображений
 img {
   max-width: 100%;
   height: auto;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
   will-change: transform;
+}
+
+// Плавные переходы для устройств без предпочтения уменьшенного движения
+@media (prefers-reduced-motion: no-preference) {
+  .header,
+  .nav-link,
+  .news-card,
+  .weather-bar {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .news-card img,
+  .section-to-sie-mowi__main img {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+// Оптимизации для сенсорных устройств
+@media (pointer: coarse) {
+  .nav-link,
+  .tool-link,
+  .header__icon,
+  .news-card {
+    cursor: pointer;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .main-nav__container {
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 1rem;
+  }
+
+  .nav-link {
+    scroll-snap-align: start;
+  }
+}
+
+// Улучшенная загрузка изображений
+.lazy-image {
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+
+  &.loaded {
+    opacity: 1;
+  }
+}
+
+// Оптимизации для notch-устройств
+@supports (padding: max(0px)) {
+  .header {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
 }

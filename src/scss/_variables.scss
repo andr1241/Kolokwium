@@ -1,0 +1,22 @@
+// Colors
+$primary-color: #00376C;
+$premium-color: #0070E1;
+$background-color: #fff;
+$text-color: #333;
+$gray-light: #f5f5f5;
+$gray: #666;
+$yellow: #FFE81A;
+
+// Breakpoints
+$mobile: 390px;
+$tablet: 768px;
+$desktop: 1200px;
+
+// Export variables
+:export {
+  primaryColor: $primary-color;
+  premiumColor: $premium-color;
+  mobile: $mobile;
+  tablet: $tablet;
+  desktop: $desktop;
+}
