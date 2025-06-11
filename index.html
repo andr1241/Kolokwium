@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onet – Jesteś na bieżąco</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/src/scss/style.scss">
+</head>
+<body>
+    <header class="header">
+        <div class="header__container">
+            <div class="header__left">
+                <a href="/" class="header__logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Onet_logo_2017.svg" alt="Onet Logo">
+                </a>
+                <nav class="header__nav">
+                    <a href="#" class="nav-link">WIADOMOŚCI</a>
+                    <a href="#" class="nav-link">SPORT</a>
+                    <a href="#" class="nav-link active">PREMIUM</a>
+                    <a href="#" class="nav-link">BIZNES</a>
+                    <a href="#" class="nav-link">REGIONALNE</a>
+                    <a href="#" class="nav-link">POGODA</a>
+                </nav>
+            </div>
+            <div class="header__actions">
+                <button class="header__icon">
+                    <span class="material-icons">search</span>
+                </button>
+                <button class="header__icon">
+                    <span class="material-icons">mail_outline</span>
+                </button>
+                <button class="header__icon">
+                    <span class="material-icons">person_outline</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="weather-bar">
+        <div class="weather-bar__container">
+            <div class="weather-bar__item">
+                <span>Warszawa</span>
+                <span class="material-icons">wb_sunny</span>
+                <span>24°</span>
+                <span>Dobry</span>
+                <span>32°</span>
+            </div>
+            <div class="weather-bar__item yellow-alert">
+                Istotne wydrzenia: Polska wciąż jest autobusem uratowana
+            </div>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <section class="section-to-sie-mowi">
+            <div class="section-to-sie-mowi__header">
+                <span class="material-icons">trending_up</span>
+                <h2>TO SIĘ MÓWI</h2>
+            </div>
+            
+            <div class="section-to-sie-mowi__grid">
+                <div class="section-to-sie-mowi__main">
+                    <div class="premium-badge">PREMIUM</div>
+                    <img src="https://via.placeholder.com/800x400" alt="Plaża nad morzem">
+                    <h3>Najlepsze miejsca na wakacje nad polskim morzem. Ranking kurortów</h3>
+                </div>
+                
+                <div class="section-to-sie-mowi__sidebar">
+                    <div class="news-item">
+                        <img src="https://via.placeholder.com/100x65" alt="News 1">
+                        <h4>Tragiczne wieści o synu prof. Zembal: "Mój syn przegrał walkę"</h4>
+                    </div>
+                    <div class="news-item">
+                        <img src="https://via.placeholder.com/100x65" alt="News 2">
+                        <h4>Biuro "tąpie klientów" i odwołuje wycieczki</h4>
+                    </div>
+                    <div class="news-item">
+                        <img src="https://via.placeholder.com/100x65" alt="News 3">
+                        <h4>Kapitalne trafienie w historii Euro! Serbowie rozstrzygnęli</h4>
+                    </div>
+                    <div class="news-item">
+                        <img src="https://via.placeholder.com/100x65" alt="News 4">
+                        <h4>Emocje przed konferencją Donalda Tuska</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
